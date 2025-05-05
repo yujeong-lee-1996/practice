@@ -1,0 +1,35 @@
+# Python 캐시 및 임시 파일
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Jupyter 체크포인트
+.ipynb_checkpoints/
+
+# 모델 및 머신러닝 관련 파일
+*.model
+*.bin
+*.pkl
+*.npy
+*.npz
+
+# 데이터 및 로그
+*.csv
+*.tsv
+*.txt
+*.log
+
+# 데이터 폴더 전체 제외
+data-files/
+
+# 가상환경 폴더 (만약 있다면)
+venv/
+env/
+
+# IDE/에디터 설정
+.vscode/
+.idea/
+
+# 기타 OS/툴에서 생기는 파일
+.DS_Store
+Thumbs.db
