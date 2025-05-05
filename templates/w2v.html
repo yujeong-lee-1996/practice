@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Word2Vec 벡터 연산</title>
+</head>
+<body>
+    <h1>Word2Vec 벡터 연산</h1>
+    <form method="post">
+        <input type="text" name="positive1"> +
+        <input type="text" name="positive2"> -
+        <input type="text" name="negative" >
+        <input type="submit" value="계산">
+    </form>
+
+    {% if result %}
+        <h3>결과:</h3>
+        <ul>
+            {% for word, score in result %}
+                <li>{{ word }} ({{ score }})</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>
