@@ -1,0 +1,82 @@
+Id : ID
+MSSubClass : 주택 유형 코드
+MSZoning : 지역 용도 구분
+LotFrontage : 도로 접면 길이 (피트)
+LotArea : 대지 면적 (제곱피트)
+Street : 도로 포장 여부
+Alley : 골목길 접근 여부
+LotShape : 대지 형태
+LandContour : 대지 평탄도
+Utilities : 사용 가능한 설비
+LotConfig : 대지 배치 유형
+LandSlope : 대지 경사도
+Neighborhood : 지역 이름
+Condition1 : 주변 환경 조건1
+Condition2 : 주변 환경 조건2
+BldgType : 건물 유형
+HouseStyle : 주택 스타일
+OverallQual : 전반적 자재 및 마감 품질
+OverallCond : 전반적 상태
+YearBuilt : 건축 연도
+YearRemodAdd : 리모델링 연도
+RoofStyle : 지붕 형태
+RoofMatl : 지붕 재질
+Exterior1st : 외벽 마감재 (1차)
+Exterior2nd : 외벽 마감재 (2차)
+MasVnrType : 외벽 마감 벽돌 유형
+MasVnrArea : 벽돌 외장 면적 (제곱피트)
+ExterQual : 외부 자재 품질 평가
+ExterCond : 외부 자재 상태 평가
+Foundation : 기초 구조 유형
+BsmtQual : 지하 높이 평가
+BsmtCond : 지하 상태 평가
+BsmtExposure : 지하 노출도
+BsmtFinType1 : 지하 마감 유형1
+BsmtFinSF1 : 지하 마감 면적1
+BsmtFinType2 : 지하 마감 유형2
+BsmtFinSF2 : 지하 마감 면적2
+BsmtUnfSF : 지하 미마감 면적
+TotalBsmtSF : 지하 전체 면적
+Heating : 난방 방식
+HeatingQC : 난방 품질 및 상태 평가
+CentralAir : 중앙 냉방 여부
+Electrical : 전기 설비
+1stFlrSF : 1층 면적
+2ndFlrSF : 2층 면적
+LowQualFinSF : 저품질 마감 면적
+GrLivArea : 지상 생활 공간 면적
+BsmtFullBath : 지하 전용 욕실 개수
+BsmtHalfBath : 지하 간이 욕실 개수
+FullBath : 전용 욕실 개수
+HalfBath : 간이 욕실 개수
+BedroomAbvGr : 침실 수 (지상 기준)
+KitchenAbvGr : 주방 수 (지상 기준)
+KitchenQual : 주방 품질 평가
+TotRmsAbvGrd : 총 방 수 (욕실 제외)
+Functional : 주택 기능성 등급
+Fireplaces : 벽난로 개수
+FireplaceQu : 벽난로 품질
+GarageType : 차고 위치 유형
+GarageYrBlt : 차고 건축 연도
+GarageFinish : 차고 내부 마감 상태
+GarageCars : 차량 수용 가능 대수
+GarageArea : 차고 면적 (제곱피트)
+GarageQual : 차고 품질 평가
+GarageCond : 차고 상태 평가
+PavedDrive : 진입로 포장 여부
+WoodDeckSF : 목재 데크 면적
+OpenPorchSF : 오픈 현관 면적
+EnclosedPorch : 밀폐 현관 면적
+3SsnPorch : 3계절 현관 면적
+ScreenPorch : 방충망 현관 면적
+PoolArea : 수영장 면적
+PoolQC : 수영장 품질 평가
+Fence : 울타리 상태
+MiscFeature : 기타 시설
+MiscVal : 기타 시설 금액
+MoSold : 판매 월
+YrSold : 판매 연도
+SaleType : 판매 유형
+SaleCondition : 판매 조건
+SalePrice : 판매 가격
+LogSalePrice : 로그 변환된 판매 가격
