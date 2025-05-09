@@ -1,28 +1,3 @@
-# import os
-# import torch
-# import pickle
-
-# # 예시 tokenizer (단순 split)
-# tokenizer = lambda x: x.split()
-
-# BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # utils 폴더 경로
-# VOCAB_PATH = os.path.join(BASE_DIR, "..", "vocab.pkl")  # ⬅ 정확한 경로
-
-
-# with open(VOCAB_PATH, "rb") as f:
-#     vocab = pickle.load(f)
-
-# max_len = 100  # 학습 시 사용한 max_len과 동일하게 설정
-
-# def preprocess_input(text):
-#     tokens = tokenizer(text)
-#     ids = [vocab.get(token, vocab['<unk>']) for token in tokens]
-#     if len(ids) < max_len:
-#         ids += [vocab['<pad>']] * (max_len - len(ids))
-#     else:
-#         ids = ids[:max_len]
-#     return torch.tensor([ids], dtype=torch.long)
-
 import torch
 from konlpy.tag import Okt
 import pickle
