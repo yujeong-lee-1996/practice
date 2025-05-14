@@ -1,0 +1,16 @@
+# 환경 변수
+.env
+
+# 내부 민감한 문서들 (예: 주민번호 등)
+back/rag/documents/
+back/vectorstore/
+
+# 캐시된 벡터 DB
+*.pkl
+
+# 시스템 파일
+__pycache__/
+*.pyc
+
+# 개발 중 데이터
+*.log

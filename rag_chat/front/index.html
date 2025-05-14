@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gemini 챗봇</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <h1>Gemini 챗봇</h1>
+
+  <div id="tabs">
+    <button id="mode-chat" class="tab-btn active" onclick="switchMode('chat')">일반</button>
+    <button id="mode-lie" class="tab-btn" onclick="switchMode('lie')">거짓말</button>
+    <button id="mode-rag" class="tab-btn" onclick="switchMode('rag')">RAG</button>
+  </div>
+
+  <div id="chat-container"></div>
+
+  <div id="input-box">
+    <input id="msg" placeholder="질문을 입력하세요" />
+    <button onclick="send()">전송</button>
+  </div>
+</body>
+</html>
