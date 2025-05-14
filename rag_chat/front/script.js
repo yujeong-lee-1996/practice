@@ -1,10 +1,13 @@
 let currentMode = "chat";
+
+// 전역 상태 관리 
 let history = {
   chat: [],
   lie: [],
   rag: []
 };
 
+// 모드 전환 함수 
 function switchMode(mode) {
   currentMode = mode;
 
@@ -16,21 +19,22 @@ function switchMode(mode) {
 }
 
 async function send() {
-  const msg = document.getElementById("msg").value;
+  const msg = document.getElementById("msg").value;  // 사용자가 입력한 내용 
   if (!msg.trim()) return;
 
-  const res = await fetch(`/api/${currentMode}`, {
-    method: "POST",
+  const res = await fetch(`/api/${currentMode}`, { 
+    method: "POST", // 백엔드로 POST 요청 
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ message: msg })
   });
 
-  const data = await res.json();
+  const data = await res.json(); // 서버로부터 반환받은 값을 히스토리에 반영 
   history[currentMode] = data.history;
   renderChat();
   document.getElementById("msg").value = "";
 }
 
+// 채팅 UI 렌더링 함수 
 function renderChat() {
   const container = document.getElementById("chat-container");
   container.innerHTML = "";

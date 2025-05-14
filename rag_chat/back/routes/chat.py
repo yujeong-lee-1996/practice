@@ -6,19 +6,23 @@ from dotenv import load_dotenv
 
 chat_bp = Blueprint("chat", __name__, url_prefix="/api")
 
+# .env에서 GEMINI_API_KEY를 로드해서 Gemini 모델 초기화.
 load_dotenv()
 genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 model = genai.GenerativeModel("gemini-2.0-flash")
 
+# 각 모드별로 대화 기록(user, bot 메시지)를 리스트로 저장.
 chat_history = {
     "chat": [],
     "lie": [],
     "rag": []
 }
 
+# 대화 히스토리에 메시지 추가 (role: "user" or "bot").
 def update_history(mode, role, message):
     chat_history[mode].append({"role": role, "message": message})
 
+# 일반 모드 
 @chat_bp.route("/chat", methods=["POST"])
 def chat():
     question = request.json.get("message", "")
@@ -30,6 +34,7 @@ def chat():
 
     return jsonify({"response": answer, "history": chat_history["chat"]})
 
+# 거짓말 모드 
 @chat_bp.route("/lie", methods=["POST"])
 def lie():
     question = request.json.get("message", "")
@@ -47,6 +52,7 @@ def lie():
 
     return jsonify({"response": answer, "history": chat_history["lie"]})
 
+# RAG 모드 
 @chat_bp.route("/rag", methods=["POST"])
 def rag():
     question = request.json.get("message", "")
