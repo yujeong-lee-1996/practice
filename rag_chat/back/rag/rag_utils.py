@@ -5,12 +5,14 @@ from langchain.schema import Document # LangChain에서 문서를 담는 객체
 from langchain.text_splitter import RecursiveCharacterTextSplitter  # 문서를 여러 블록으로 자름
 from langchain_huggingface import HuggingFaceEmbeddings # 문장을 벡터로 변환할 임베딩 모델
 from dotenv import load_dotenv
+from keybert import KeyBERT
 
 
 # 환경 변수 로딩 및 HuggingFace API 설정
 load_dotenv()
 os.environ["HUGGINGFACEHUB_API_TOKEN"] = os.getenv("HUGGINGFACEHUB_API_TOKEN")
 
+kw_model = KeyBERT(model="paraphrase-MiniLM-L6-v2")
 
 # embedding = HuggingFaceEmbeddings(
 #     model_name="sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
@@ -58,6 +60,10 @@ def save_vectorstore(vectorstore, path=VECTORSTORE_PATH):
 #     return FAISS.from_documents(splits, embedding) 
 #     # 각각의 split 문서를 embedding 모델로 최적화 , 벡터를 FAISS 에 저장 후 vectorstore 객체 반환 
 
+# 핵심 키워드 추출 함수
+def extract_keywords_by_keybert(text, top_n=3):
+    keywords = kw_model.extract_keywords(text, keyphrase_ngram_range=(1, 1), stop_words=None, top_n=top_n)
+    return [kw for kw, _ in keywords]
 
 def load_vectorstore():
     if os.path.exists(VECTORSTORE_PATH): # 이미 만들어둔 FAISS 벡터 DB 가 있으면 로드해서 재사용 
@@ -73,10 +79,17 @@ def load_vectorstore():
         save_vectorstore(vectorstore) # 저장 
         return vectorstore
 
-# 답변 생성 ㅎ함수 
+# 답변 생성 함수 
 def generate_rag_answer(model, question, vectorstore, k=4): 
+
+    # 키워드 추룰 
+    keywords = extract_keywords_by_keybert(question)
+    # 키워드 기반 검색
+    query = " ".join(keywords)
+
     # 질문에 대해 벡터 유사도 기반으로 가장 비슷한 문서 k개 검색 
-    docs = vectorstore.similarity_search(question, k=k) 
+    docs = vectorstore.similarity_search(query, k=k) 
+
     context = "\n".join([f"문서{i+1}: {doc.page_content}" for i, doc in enumerate(docs)])
     prompt = f"""Context에 기반해서 짧게 대답해줘.
     Context:
