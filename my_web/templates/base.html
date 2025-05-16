@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>myweb</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="layout">
+    <!-- 왼쪽 사이드바 -->
+    <aside class="sidebar">
+      <img src="{{ url_for('static', filename='Teri.jpg') }}" class="profile-img" alt="프로필">
+      <h2>이유정</h2>
+      <p>AI 공부 중입니다 🧠💻</p>
+      <nav class="nav-links">
+        <a href="/">🏠 Home</a>
+        <a href="/project/lstm">📊 LSTM</a>
+        <a href="/project/word2vec">🔤 Word2Vec</a>
+        <a href="/project/chatbot">🤖 Chatbot</a>
+      </nav>
+      <div class="contact">
+        <p>📧 daaaaaang2@gmail.com</p>
+        <p>💻 <a href="https://github.com/yujeong-lee-1996" target="_blank">GitHub</a></p>
+      </div>
+    </aside>
+
+    <!-- 오른쪽 콘텐츠 영역 -->
+    <main class="content">
+      {% block content %}{% endblock %}
+    </main>
+  </div>
+</body>
+</html>

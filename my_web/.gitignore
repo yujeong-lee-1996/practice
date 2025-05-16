@@ -1,0 +1,26 @@
+# 파이썬 캐시 및 빌드
+__pycache__/
+*.pyc
+*.pyo
+
+# 모델 및 데이터
+models/
+!models/lstm_model.py
+data_files/
+*.pkl
+*.pth
+
+# 환경 설정
+.env
+.env.*
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE
+.vscode/
+.idea/
+
+# 운영체제
+.DS_Store
+Thumbs.db

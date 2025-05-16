@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h2>🎬 영화 리뷰 감성 예측기</h2>
+    
+    <form method="POST">
+        <label for="text_input">문장을 입력하세요:</label><br><br>
+        <textarea name="text_input" rows="4" cols="50" placeholder="예: 이딴 게 영화냐 ㅉㅉ">{{ request.form.text_input }}</textarea><br><br>
+        <input type="submit" value="예측">
+    </form>
+
+    {% if prediction %}
+        <h3>예측 결과: <span style="color:green">{{ prediction }}</span></h3>
+    {% endif %}
+    {% endblock %}

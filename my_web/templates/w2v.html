@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Word2Vec 벡터 연산</h1>
+    <form method="post">
+        <input type="text" name="expression" placeholder="예: 한국 + 서울 - 일본" value="{{ expression }}" size="50">
+        <input type="submit" value="계산">
+    </form>
+    
+    {% if result %}
+        <h3>결과:</h3>
+        <ul>
+            {% for word, score in result %}
+                <li>{{ word }} ({{ score }})</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    {% endblock %}

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='chatbot.css') }}">
+<script defer src="{{ url_for('static', filename='script.js') }}"></script>
+
+<div class="chatbot-box">
+  <h2>🤖 Gemini 챗봇</h2>
+
+  <div id="tabs">
+    <button id="mode-chat" class="tab-btn active" onclick="switchMode('chat')">일반</button>
+    <button id="mode-lie" class="tab-btn" onclick="switchMode('lie')">거짓말</button>
+    <button id="mode-rag" class="tab-btn" onclick="switchMode('rag')">RAG</button>
+  </div>
+
+  <div id="chat-container"></div>
+
+  <div id="input-box">
+    <input id="msg" placeholder="질문을 입력하세요" />
+    <button onclick="send()">전송</button>
+  </div>
+</div>
+{% endblock %}
