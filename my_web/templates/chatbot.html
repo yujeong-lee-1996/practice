@@ -1,11 +1,15 @@
-{% extends "base.html" %}
+{% extends "layout/base.html" %}
+
+{% block extra_css %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='chatbot.css') }}">
+{% endblock %}
 
 {% block content %}
-<link rel="stylesheet" href="{{ url_for('static', filename='chatbot.css') }}">
+<!-- <link rel="stylesheet" href="{{ url_for('static', filename='chatbot.css') }}"> -->
 <script defer src="{{ url_for('static', filename='script.js') }}"></script>
 
 <div class="chatbot-box">
-  <h2>🤖 Gemini 챗봇</h2>
+  <h2>🤖 Chat bot</h2>
 
   <div id="tabs">
     <button id="mode-chat" class="tab-btn active" onclick="switchMode('chat')">일반</button>

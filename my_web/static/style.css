@@ -1,60 +1,169 @@
-body {
+/* 기본 설정 */
+* {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: #f5f5f5;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+body {
+  font-family: 'Pretendard', 'Segoe UI', sans-serif;
+  background-color: #fdfdfd;
+  color: #333;
+  overflow-x: hidden;
+}
+
+/* 헤더 */
+.site-header {
+  background: linear-gradient(90deg, #ffe3e3, #ffc9de);
+  padding: 25px 20px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 24px;
+  color: #444;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  letter-spacing: 1px;
+}
+
+.site-header span {
+  font-weight: 800;
+  color: #d6336c;
+}
+
+/* 레이아웃 */
 .layout {
   display: flex;
-  height: 100vh;
+  min-height: calc(100vh - 120px); /* 헤더+푸터 제외 */
+  overflow: hidden;
 }
 
 .sidebar {
-  width: 240px;
-  background-color: #ffffff;
-  border-right: 1px solid #e0e0e0;
-  padding: 20px;
-  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05);
+  width: 250px;
+  min-width: 220px;
+  background-color: #fff;
+  border-right: 1px solid #eee;
+  padding: 30px 20px;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .profile-img {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
+  width: 100px;
+  height: 100px;
   object-fit: cover;
-  display: block;
+  border-radius: 50%;
   margin: 0 auto 10px;
+  border: 3px solid #f8d7da;
 }
 
 .sidebar h2 {
   text-align: center;
+  font-size: 20px;
   margin-bottom: 5px;
+  color: #222;
+}
+
+.sidebar p {
+  text-align: center;
+  font-size: 14px;
+  color: #888;
 }
 
 .nav-links {
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 .nav-links a {
   display: block;
+  padding: 10px 12px;
   margin-bottom: 10px;
   text-decoration: none;
-  color: #2c3e50;
-  font-weight: bold;
+  color: #444;
+  background: #f8f9fa;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: 0.2s ease-in-out;
 }
 
 .nav-links a:hover {
-  color: #3498db;
+  background: #ffe3e3;
+  color: #d6336c;
 }
 
 .contact {
   font-size: 13px;
+  color: #999;
   margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
 }
 
+.contact a {
+  color: #888;
+  text-decoration: none;
+}
+
+.contact a:hover {
+  text-decoration: underline;
+}
+
+/* 메인 콘텐츠 */
 .content {
   flex-grow: 1;
   padding: 40px;
-  background-color: #ffffff;
+  background-color: #fff;
   overflow-y: auto;
+}
+
+/* 푸터 */
+.site-footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  background-color: #fafafa;
+  color: #777;
+  border-top: 1px solid #eee;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #eee;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .sidebar h2,
+  .sidebar p,
+  .profile-img {
+    display: none;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 0;
+  }
+
+  .nav-links a {
+    margin: 0;
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+
+  .content {
+    padding: 20px;
+  }
 }
