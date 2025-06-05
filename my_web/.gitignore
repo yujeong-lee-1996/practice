@@ -24,3 +24,6 @@ data_files/
 # 운영체제
 .DS_Store
 Thumbs.db
+
+# 업로드 이미지 제외
+my_web/static/uploads/

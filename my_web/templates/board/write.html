@@ -1,0 +1,25 @@
+{% extends "layout/base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+
+  <form id="post-form" method="POST" action="{{ url_for('board.write_post') }}">
+    <div class="form-group">
+      <label for="title">Title :</label>
+      <input type="text" id="title" name="title" class="form-control" placeholder="제목을 입력하세요." required>
+    </div>
+
+    <div class="form-group">
+      <label for="content">Content : </label>
+      <textarea id="summernote" name="content" class="form-control summernote" rows="10"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-3">작성</button>
+  </form>
+  <a href="{{ url_for('board.board_list') }}" class="btn btn-secondary mt-4">← 목록으로</a>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+  <script src="{{ url_for('static', filename='board.js') }}"></script>
+{% endblock %}

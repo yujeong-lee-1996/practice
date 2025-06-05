@@ -1,0 +1,19 @@
+/* 상세 페이지 전체 영역 조절 */
+.detail-post {
+    padding: 1.5rem;
+  }
+  
+  /* 내부 내용의 폭 제한 (중앙 정렬) */
+  .detail-inner {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /* 이미지가 부모 영역을 넘지 않도록 제한 */
+  .detail-inner img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1rem 0;
+  }
+  
