@@ -27,18 +27,18 @@
 #### 📂 my_web 디렉토리 구조
 
 my_web/
-├── data_files/ # 데이터 파일 (ex. 예시 입력, 임베딩 등)
-├── db/ # 데이터베이스 연동 모듈
-├── models/ # 학습된 모델 및 로딩 로직
-├── static/ # CSS, JS, 이미지 등 정적 리소스
-├── templates/ # HTML 템플릿 (Jinja2)
-├── train/ # 학습용 코드 (ex. LSTM 학습)
-├── utils/ # 유틸 함수 (전처리, 벡터 연산 등)
-├── views/ # Flask Blueprint 라우팅 분리
-├── .env # 환경 변수 (API 키 등)
-├── .gitignore # Git 무시 파일 설정
-├── init.py # Flask 앱 초기화
-└── run.py # Flask 앱 실행 진입점
+├── data_files/ # 데이터 파일 (ex. 예시 입력, 임베딩 등)  
+├── db/ # 데이터베이스 연동 모듈  
+├── models/ # 학습된 모델 및 로딩 로직  
+├── static/ # CSS, JS, 이미지 등 정적 리소스  
+├── templates/ # HTML 템플릿 (Jinja2)  
+├── train/ # 학습용 코드 (ex. LSTM 학습)  
+├── utils/ # 유틸 함수 (전처리, 벡터 연산 등)  
+├── views/ # Flask Blueprint 라우팅 분리  
+├── .env # 환경 변수 (API 키 등)  
+├── .gitignore # Git 무시 파일 설정  
+├── init.py # Flask 앱 초기화  
+└── run.py # Flask 앱 실행 진입점  
 
 ### 5. predict_practice - 경진대회 실습
 - **내용**: Kaggle / Dacon 등 실전 예측 모델링
@@ -47,6 +47,6 @@ my_web/
 
 
 #### 가상환경 설치 및 실행
-conda create -n python-env-311 python=3.11
+conda create -n python-env-311 python=3.11  
 conda activate python-env-311
 
