@@ -46,8 +46,7 @@ my_web/
 - **목표**: 문제 정의부터 전처리, 모델 학습, 결과 분석까지 전 과정을 반복 실습
 
 
-```bash
-# 가상환경 설치 및 실행
+#### 가상환경 설치 및 실행
 conda create -n python-env-311 python=3.11
 conda activate python-env-311
 
